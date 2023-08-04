@@ -9,7 +9,7 @@ const ProductDetails = () => {
     const location = useLocation();
     const product = location.state?.product;
     const [selectedSize, setSelectedSize] = useState(product.sizes[1]); 
-    const imageURL = process.env.REACT_APP_STORAGE_URL + product.imageUrl + ".png"
+    const imageURL = import.meta.env.VITE_STORAGE_URL + product.imageUrl + ".png"
 
     const handleAddToCart = () => {
         cart.addOneProduct(product.id, selectedSize);
